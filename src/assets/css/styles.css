@@ -97,8 +97,8 @@
   .frequency-note span { display: block; color: var(--muted); font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; }
   .frequency-note strong { display: block; margin-block: .5rem; color: var(--primary); font-family: Georgia, "Times New Roman", serif; font-size: 1.55rem; font-weight: 500; }
   .frequency-note p { color: var(--muted); font-size: .9rem; }
-  .hero-media { margin: 0; }
-  .hero-media img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 4px; }
+  .hero-media { width: 100%; max-width: 20rem; min-width: 0; margin: 0; }
+  .hero-media img { width: 100%; height: auto; border-radius: 4px; }
   .hero-media figcaption { margin-top: .5rem; color: var(--muted); font-size: .75rem; }
 
   .theme-grid { display: grid; grid-template-columns: repeat(3, 1fr); list-style: none; border-block: 1px solid var(--rule-strong); }
