@@ -122,7 +122,7 @@
   .citation-meta { margin-top: .35rem; color: var(--muted); font-size: .85rem; }
   .citation-meta cite { font-style: normal; }
   .tag-list { display: flex; flex-wrap: wrap; gap: .4rem .8rem; margin-top: var(--space-3); list-style: none; }
-  .tag-list a { color: var(--secondary); font-size: .74rem; font-weight: 700; text-decoration: none; }
+  .tag-list a, .tag-list span { color: var(--secondary); font-size: .74rem; font-weight: 700; text-decoration: none; }
   .record-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: auto; padding-top: var(--space-4); font-size: .9rem; font-weight: 700; }
   .project h3 { font-size: 1.3rem; }
   .project-short { display: block; margin-bottom: .35rem; color: var(--primary); font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: .75rem; font-weight: 700; }
