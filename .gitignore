@@ -1,0 +1,6 @@
+_site/
+node_modules/
+.DS_Store
+*.log
+src/assets/images/originals/*
+!src/assets/images/originals/.gitkeep

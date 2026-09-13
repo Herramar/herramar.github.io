@@ -1,0 +1,33 @@
+{
+  "id": "juan-herrera-martin",
+  "status": "published",
+  "name": "Juan María Herrera Martín",
+  "citationNames": ["J. M. Herrera-Martín", "J. M. Herrera-Martin", "Juan M. Herrera-Martín"],
+  "role": "PhD Candidate",
+  "institution": "Universidad Carlos III de Madrid",
+  "institutionShort": "UC3M",
+  "department": "Signal Theory and Communications",
+  "group": "Radiofrequency, Electromagnetics, Microwaves and Antennas Group",
+  "groupShort": "GREMA",
+  "researchLine": "Integrated RF front ends and antennas for space, sensing, and future communications.",
+  "heroSummary": "He designs silicon-germanium front ends and antennas at millimeter and submillimeter wavelengths, combining electromagnetic simulation, fabrication-aware integration, and laboratory characterization. His work supports radiometry and Earth observation, nanosatellite communications, automotive sensing, SATCOM, and emerging 6G systems.",
+  "shortBio": "Juan María Herrera Martín is a PhD candidate in Signal Processing and Communications Engineering at Universidad Carlos III de Madrid and a researcher in GREMA. His work focuses on integrated silicon-germanium front ends, antennas, radiometry, and high-frequency measurement for space, Earth observation, automotive sensing, SATCOM, and 6G. He completed a doctoral research stay at Aalto University and teaches RF and network-analysis laboratory courses at UC3M. He also contributes to student-led space and telecommunications initiatives through PUNTO, UC3-Base, BOIRA, and STAR UC3M.",
+  "longBio": [
+    "Juan María Herrera Martín is a PhD candidate in Signal Processing and Communications Engineering at Universidad Carlos III de Madrid (UC3M), where he has worked as research personnel in the Radiofrequency, Electromagnetics, Microwaves and Antennas Group (GREMA) since 2021. His doctoral research develops on-chip silicon-germanium front ends at frequencies above 200 GHz and laboratory methods for electromagnetic and electrical characterization.",
+    "His broader research connects integrated antennas, radiometry, circular polarization, phased arrays, and high-frequency measurement with applications in Earth observation, nanosatellite telemetry and telecommand, automotive sensing, satellite communications, and emerging 6G systems. In 2024, he completed a funded doctoral research stay at Aalto University focused on millimeter-wave, terahertz, and optical systems for biomedical and space applications.",
+    "Juan holds a double master's degree in Telecommunications Engineering and Space Engineering and a bachelor's degree in Sound and Image Engineering from UC3M. His academic record includes an FPU doctoral fellowship, the UC3M Extraordinary End of Degree Award, and SENER Foundation awards for his radiometer-antenna thesis and the BOIRA satellite predesign. He teaches laboratory courses in high-frequency technology, radiofrequency subsystems, and linear network analysis, and has co-tutored a bachelor's thesis on SiGe antennas for vehicular radar. His technical-community work includes founding leadership in PUNTO and UC3-Base, payload and RF roles in ST3LLARSAT1/BOIRA, and former leadership in STAR UC3M."
+  ],
+  "thesisTitle": "On-Chip SiGe Front Ends in Millimeter-Wave Bands for Automotive, Space and Communication Applications",
+  "email": "juherrer@pa.uc3m.es",
+  "location": "Madrid, Spain",
+  "portrait": null,
+  "profiles": [
+    {"label": "UC3M Research Portal", "url": "https://researchportal.uc3m.es/display/inv48090"},
+    {"label": "ORCID", "url": "https://orcid.org/0000-0001-7817-2388"},
+    {"label": "Google Scholar", "url": "https://scholar.google.com/citations?user=-wKJ8rQAAAAJ&hl=en"},
+    {"label": "LinkedIn", "url": "https://www.linkedin.com/in/jmherr/"}
+  ],
+  "source_refs": ["S1", "S2", "S3"],
+  "last_verified": "2026-09-13",
+  "privacy_review": "approved"
+}

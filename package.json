@@ -1,0 +1,16 @@
+{
+  "name": "herramar-github-io",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static academic website for Juan Maria Herrera Martin",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs",
+    "test": "npm run build && npm run check",
+    "serve": "node scripts/serve.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
