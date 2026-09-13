@@ -20,7 +20,12 @@
   "thesisTitle": "On-Chip SiGe Front Ends in Millimeter-Wave Bands for Automotive, Space and Communication Applications",
   "email": "juherrer@pa.uc3m.es",
   "location": "Madrid, Spain",
-  "portrait": null,
+  "portrait": {
+    "src": "juan-herrera-portrait-2026-800.jpg",
+    "width": 1536,
+    "height": 2048,
+    "alt": "Portrait of Juan María Herrera Martín."
+  },
   "profiles": [
     {"label": "UC3M Research Portal", "url": "https://researchportal.uc3m.es/display/inv48090"},
     {"label": "ORCID", "url": "https://orcid.org/0000-0001-7817-2388"},
