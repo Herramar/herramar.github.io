@@ -46,7 +46,7 @@ Edit the appropriate JSON file in `src/data/`, keep `status`, `source_refs`, and
 
 ## Adding approved media
 
-The launch build uses the specified text-first fallback and includes no portrait or research photographs. Do not copy the private CV or unlicensed figures into this project.
+The site currently uses an approved portrait. Do not copy private CV material, confidential technical images, or unlicensed figures into this project.
 
 To add a portrait, place optimized AVIF/WebP/JPEG files in `src/assets/images/`, then replace `"portrait": null` in `src/data/person.json` with:
 
@@ -66,4 +66,4 @@ Record the rights holder, permission, credit, crop, and alt-text decision outsid
 
 ## Known limitation
 
-The included social preview is a text-only identity graphic. No portrait or research photography is included because media rights and source files were intentionally deferred. Cross-browser and screen-reader checks that require physical Safari/iOS, Android, NVDA, or VoiceOver remain deployment-owner tasks.
+The included social preview is a text-only identity graphic. Documentary research photography beyond the portrait is intentionally deferred until image selection and permissions are complete. Cross-browser and screen-reader checks that require physical Safari/iOS, Android, NVDA, or VoiceOver remain deployment-owner tasks.
