@@ -576,7 +576,17 @@
   .hero-media img { object-position: center 20%; }
   .research-line { margin-top: var(--space-4); font-size: 1.32rem; }
   .hero-copy { color: #ced1c8; }
-  .frequency-axis { grid-template-columns: auto 1fr auto; }
+  .frequency-axis { display: block; }
+  .frequency-axis > strong { display: block; }
+  .frequency-axis > strong:last-child { margin-top: .5rem; }
+  .frequency-track { height: auto; margin-top: .75rem; }
+  .frequency-band, .frequency-track > i { display: none; }
+  .frequency-markers { position: relative; display: grid; gap: .75rem; padding-left: 1.5rem; }
+  .frequency-markers::before { content: ""; position: absolute; top: .4rem; bottom: .4rem; left: .32rem; width: 2px; background: var(--signal); }
+  .frequency-marker { position: relative; top: auto; left: auto; transform: none; }
+  .frequency-marker-dot { position: absolute; top: .2rem; left: -1.5rem; }
+  .frequency-marker-label, .frequency-marker-above .frequency-marker-label { position: static; display: block; width: auto; min-height: 0; text-align: left; transform: none; }
+  .frequency-marker-sample { display: block; min-height: 0; margin-top: .2rem; overflow: visible; text-align: left; -webkit-line-clamp: unset; }
   .frequency-axis > small { display: none; }
   .theme-link { grid-template-columns: 2.5rem minmax(0, 1fr) 2rem; gap: var(--space-3); padding-block: var(--space-4); }
   .theme-frequency { grid-column: 2; grid-row: 1; }
