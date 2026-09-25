@@ -318,7 +318,7 @@
   .featured-grid > :nth-child(3n + 1) { padding-right: var(--space-3); }
   .featured-grid > :nth-child(3n + 2) { padding-inline: var(--space-3); border-inline: 1px solid var(--rule); }
   .featured-grid > :nth-child(3n) { padding-left: var(--space-3); }
-  .project { padding-block: var(--space-3); }
+  .project { display: grid; grid-row: span 6; grid-template-rows: subgrid; padding-block: var(--space-3); }
   .project-grid > :nth-child(4n + 1) { padding-right: var(--space-3); }
   .project-grid > :nth-child(4n + 2), .project-grid > :nth-child(4n + 3) { padding-inline: var(--space-3); border-left: 1px solid var(--rule); }
   .project-grid > :nth-child(4n) { padding-left: var(--space-3); border-left: 1px solid var(--rule); }
@@ -348,6 +348,8 @@
   .project-short { display: block; margin-bottom: .55rem; color: var(--signal-dark); font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: .7rem; }
   .project .partner { margin-top: var(--space-2); font-size: .76rem; font-weight: 800; }
   .project > p:not(.partner):not(.role):not(.disclosure) { margin-top: var(--space-2); color: var(--muted); font-size: .9rem; }
+  .project .tag-list { margin-top: 0; }
+  .project-note .disclosure { margin-top: 0; }
   .status { color: var(--signal-dark); }
   .status-completed { color: var(--muted); }
   .role, .disclosure { margin-top: var(--space-3); font-size: .8rem; }
@@ -374,15 +376,29 @@
     font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
     font-size: .68rem;
   }
+  .page-intro-engagement::before { display: none; }
+  .page-intro-publications::before { display: none; }
+  .page-intro-research::before { display: none; }
+  .page-intro-engagement { padding-bottom: var(--space-2); }
+  .page-intro-engagement + .section { padding-top: var(--space-3); }
   .page-intro h1 { max-width: 18ch; font-size: 5rem; text-transform: uppercase; }
+  .page-intro-research h1 { max-width: none; font-size: clamp(1.5rem, 5.8vw, 5rem); white-space: nowrap; }
+  .page-intro-research .lede { max-width: 110ch; }
   .lede { max-width: 74ch; margin-top: var(--space-4); color: var(--muted); font-size: 1.12rem; }
   .lede-small { max-width: 54ch; margin-top: var(--space-3); color: var(--muted); font-size: 1.08rem; }
   .theme-section { padding-block: var(--space-7); border-top: 0; }
+  .theme-section > .wide-container { display: grid; grid-template-columns: 4rem minmax(0, 1fr) minmax(16rem, 24rem); gap: var(--space-5) var(--space-6); align-items: start; }
+  .research { background: #fff; }
+  .research #integrated-sige-front-ends, .research #antennas-radiometry-measurement, .research #completed-projects { background: var(--paper); }
   .page-intro + .theme-section, .theme-section + .theme-section { border-top: 1px solid var(--rule); }
-  .theme-header { display: grid; grid-template-columns: 5rem minmax(0, 1fr); gap: var(--space-5); }
-  .theme-header .theme-number { padding-top: .6rem; color: var(--signal-dark); }
-  .theme-header h2 { font-size: 3.8rem; }
-  .theme-body { margin-top: var(--space-6); padding-left: calc(5rem + var(--space-5)); }
+  .theme-header { display: contents; }
+  .theme-header .theme-number { grid-column: 1; grid-row: 1; padding-top: .6rem; color: var(--signal-dark); }
+  .theme-header > div { grid-column: 2; grid-row: 1; min-width: 0; }
+  .theme-header h2 { max-width: none; font-size: clamp(2rem, 4vw, 3.8rem); white-space: nowrap; }
+  .theme-header .lede-small, .theme-body p { max-width: 110ch; }
+  .theme-body { grid-column: 2; grid-row: 2; min-width: 0; }
+  .theme-visual { grid-column: 3; grid-row: 1 / span 2; display: flex; justify-content: flex-end; align-items: flex-start; }
+  .theme-visual img { width: 100%; max-height: 26rem; object-fit: contain; object-position: center top; }
   .theme-body h3 + p, .theme-body h3 + ul { margin-top: var(--space-3); }
   .theme-body p + h3, .theme-body ul + h3 { margin-top: var(--space-5); }
   .method-list { padding-left: 1.2rem; columns: 2; column-gap: var(--space-5); }
@@ -413,13 +429,15 @@
   .filter-bar select { min-height: 2.75rem; display: block; padding: .45rem 2rem .45rem .65rem; color: var(--ink); background: var(--surface); border: 1px solid var(--rule-strong); border-radius: 0; }
   .publication-year { display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: var(--space-5); padding-block: var(--space-5); border-top: 1px solid var(--rule-strong); }
   .publication-year > h2 { color: var(--signal-dark); font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 1rem; }
-  .publication-list { display: grid; }
-  .publication-list .publication { padding-inline: 0; border-left: 0; }
-  .publication-list .publication h3 { max-width: 44ch; }
+  .publication-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--space-5); }
+  .publication-list .publication { padding: var(--space-3) 0; border-left: 0; }
+  .publication-list .publication h3 { max-width: 44ch; font-size: 1.45rem; line-height: 1.15; }
+  .publication-list .publication-topline { margin-bottom: var(--space-2); }
+  .publication-list .authors, .publication-list .tag-list { margin-top: var(--space-3); }
+  .publication-list .record-actions { padding-top: var(--space-3); }
   .empty-state { padding: var(--space-6); text-align: center; border: 1px dashed var(--rule-strong); }
   .empty-state p { margin-inline: auto; }
   .text-button { min-height: 2.75rem; padding: .5rem; color: var(--signal-dark); background: transparent; border: 0; font-weight: 800; text-decoration: underline; cursor: pointer; }
-  .citation-note p { margin-top: var(--space-3); color: var(--muted); }
 
   .course-list { border-top: 1px solid var(--rule-strong); }
   .course { display: grid; grid-template-columns: minmax(0, 1fr) minmax(18rem, .8fr) minmax(12rem, .5fr); gap: var(--space-5); padding-block: var(--space-5); border-bottom: 1px solid var(--rule); }
@@ -434,13 +452,13 @@
   .supervision a { display: inline-block; }
 
   .organization-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 0; }
-  .organization { display: grid; grid-template-columns: minmax(0, 1fr) 7rem; grid-auto-rows: auto; column-gap: var(--space-4); padding: var(--space-4) 0; border-bottom: 1px solid var(--rule); }
+  .organization { display: grid; grid-template-columns: minmax(0, 1fr) 12rem; grid-auto-rows: auto; column-gap: var(--space-4); padding: var(--space-4) 0; border-bottom: 1px solid var(--rule); }
   .organization:nth-child(2n + 1) { padding-right: var(--space-4); }
   .organization:nth-child(2n) { padding-left: var(--space-4); border-left: 1px solid var(--rule); }
-  .organization-logo { grid-column: 2; grid-row: 1 / span 5; width: 7rem; height: 7rem; display: grid; place-items: center; margin: 0 0 0 auto; padding: var(--space-2); border: 1px solid var(--rule); background: var(--paper); }
+  .organization-logo { grid-column: 2; grid-row: 1 / span 5; width: 10rem; height: 10rem; display: grid; place-items: center; margin: 0 0 0 auto; }
+  .organization-logo-wide { width: 11rem; height: 10rem; padding-inline: .5rem; background: #000; }
   .organization-logo img { width: 100%; height: 100%; object-fit: contain; }
-  .organization-logo-square img { max-width: 7rem; max-height: 7rem; }
-  .organization-logo-wide img { max-width: 90%; max-height: 5.25rem; }
+  .organization-logo-wide img { height: auto; }
   .organization .full-name { margin-top: .5rem; color: var(--muted); }
   .organization .role { color: var(--signal-dark); font-weight: 800; }
   .organization p:last-child { margin-top: var(--space-3); }
@@ -538,11 +556,13 @@
   .theme-link p { grid-column: 3 / 5; }
   .theme-arrow { grid-column: 4; grid-row: 1; }
   .two-column, .theme-body { grid-template-columns: 1fr; gap: var(--space-5); }
-  .theme-body { padding-left: 0; }
+  .theme-section > .wide-container { grid-template-columns: 3rem minmax(0, 1fr) minmax(13rem, 18rem); column-gap: var(--space-4); }
+  .theme-header h2 { font-size: clamp(1.5rem, 2.8vw, 2.5rem); }
   .related-work { padding: var(--space-4) 0 0; border-left: 0; border-top: 1px solid var(--rule); }
   .course { grid-template-columns: 1fr 1fr; }
   .course .tag-list { grid-column: 1 / -1; }
   .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .publication-year { grid-template-columns: 1fr; gap: var(--space-2); }
   .project-grid > :nth-child(n) { padding-inline: 0; border-left: 0; }
   .project-grid > :nth-child(odd) { padding-right: var(--space-3); }
   .project-grid > :nth-child(even) { padding-left: var(--space-3); border-left: 1px solid var(--rule); }
@@ -596,21 +616,27 @@
   .featured-grid, .project-grid, .organization-grid { grid-template-columns: 1fr; }
   .featured-grid > :nth-child(n), .project-grid > :nth-child(n), .organization:nth-child(n) { padding-inline: 0; border-inline: 0; }
   .organization { display: block; }
-  .organization-logo { width: 7rem; height: 7rem; margin: 0 0 var(--space-4) auto; }
+  .organization-logo { margin: 0 0 var(--space-4) auto; }
   .publication-featured { min-height: 0; }
   .split-band .wide-container { grid-template-columns: 1fr; }
   .split-band .wide-container > div { min-height: 15rem; padding: var(--space-5) 0; }
   .split-band .wide-container > div + div { border-left: 0; border-top: 1px solid #3c3f39; }
   .page-intro { min-height: 14rem; }
   .page-intro h1 { font-size: 3.4rem; }
-  .theme-header { grid-template-columns: 3rem minmax(0, 1fr); gap: var(--space-3); }
-  .theme-header h2 { font-size: 2.45rem; }
+  .page-intro-research h1 { font-size: clamp(1.15rem, 6vw, 3.4rem); }
+  .theme-section > .wide-container { grid-template-columns: 1fr; gap: var(--space-4); }
+  .theme-header .theme-number { grid-column: 1; grid-row: 1; padding: 0; }
+  .theme-header > div { grid-column: 1; grid-row: 2; }
+  .theme-body { grid-column: 1; grid-row: 3; }
+  .theme-visual { grid-column: 1; grid-row: 4; justify-content: flex-start; }
+  .theme-visual img { width: auto; max-width: 100%; }
+  .theme-header h2 { font-size: clamp(1rem, 4.5vw, 2.45rem); }
   #communities, #memberships { font-size: 1.75rem; }
   #experience { font-size: 1.75rem; }
   .method-list { columns: 1; }
   .capability-grid { grid-template-columns: 1fr; }
   .contact-strip .wide-container, .profile-band .wide-container { align-items: flex-start; flex-direction: column; }
-  .publication-year { grid-template-columns: 1fr; gap: var(--space-2); }
+  .publication-list { grid-template-columns: 1fr; }
   .course, .timeline article, .career-list li, .award-list li { grid-template-columns: 1fr; gap: var(--space-3); }
   .experience-list { grid-template-columns: 1fr; }
   .experience-list li:nth-child(even) { padding-left: 0; border-left: 0; }

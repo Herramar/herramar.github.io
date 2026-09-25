@@ -9,27 +9,27 @@
     "approach": "I combine antenna and front-end design in silicon-germanium processes, moving from ideal electromagnetic models to layouts that account for process layers, feeding structures, active stages, and practical characterization. My aim is to make highly integrated architectures measurable and useful at frequencies where packaging and interconnects become part of the RF problem.",
     "methods": ["RFIC and SiGe layout", "Electromagnetic simulation", "Fabrication-aware integration", "On-chip electrical characterization"],
     "applications": ["Radiometer front ends", "Automotive sensing", "6G communications"],
-    "source_refs": ["S1", "S6"],
+    "source_refs": ["S1", "S6", "https://doi.org/10.23919/EuCAP63536.2025.10999903", "https://doi.org/10.23919/EuCAP53622.2022.9769535"],
     "last_verified": "2026-09-13"
   },
     {
     "id": "space-communications",
     "status": "published",
     "order": 2,
-    "title": "Innovative Space Hardware",
-    "summary": "I design high-frequency hardware for CubeSat telemetry and satellite communications.",
-    "problem": "Which integrated RF technologies can translate into compact, robust communication systems?",
-    "approach": "I connect common RF methods across nanosatellite telemetry and telecommand, and satellite communications. My projects emphasize compact hardware, dual circular polarization, and measurement strategies while keeping public industry descriptions within approved disclosure limits.",
+    "title": "Communications Hardware",
+    "summary": "I design high-frequency hardware for space systems and emerging communication networks.",
+    "problem": "Which RF technologies can translate into compact, robust communication systems?",
+    "approach": "I connect RF methods across nanosatellite telemetry, satellite communications, and emerging terrestrial networks. My projects emphasize compact hardware, dual circular polarization, beamforming, and practical validation while keeping public industry descriptions within approved disclosure limits.",
     "methods": ["System and antenna architecture", "Active and broadband arrays", "Beamforming concepts", "Sequential Rotation"],
-    "applications": ["Space and Earth observation", "CubeSat Telemetry", "SATCOM"],
-    "source_refs": ["S1", "S2", "S6"],
+    "applications": ["CubeSat telemetry", "Satellite communications", "6G communications"],
+    "source_refs": ["S1", "S2", "S6", "https://doi.org/10.1109/MAES.2025.3568352", "https://doi.org/10.1109/USNC-URSI52151.2023.10238172"],
     "last_verified": "2026-09-13"
   },
 {
   "id": "antennas-radiometry-measurement",
   "status": "published",
   "order": 3,
-  "title": "Measurement System Setup",
+  "title": "Antennas & Measurement",
   "summary": "I validate antennas, arrays, radiometers, and high-frequency hardware using probe stations, VNAs, frequency extenders, coplanar probes, antenna chambers, and near-field measurement systems.",
   "problem": "How can mmWave and sub-THz antenna concepts be reliably validated under demanding fabrication and measurement constraints?",
   "approach": "I combine simulation and prototype development with calibrated probe-station measurements, VNA frequency extenders, GSG/GSGSG coplanar probes, near-field scanning, and chamber characterization to evaluate impedance, radiation patterns, gain, polarization, and beam steering.",
@@ -47,7 +47,7 @@
     "On-chip measurements",
     "mmWave and sub-THz characterization"
   ],
-  "source_refs": ["S1", "S6"],
+  "source_refs": ["S1", "S6", "https://doi.org/10.23919/EuCAP53622.2022.9769535"],
   "last_verified": "2026-09-13"
 }
 ]
