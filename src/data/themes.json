@@ -12,30 +12,42 @@
     "source_refs": ["S1", "S6"],
     "last_verified": "2026-09-13"
   },
-  {
-    "id": "antennas-radiometry-measurement",
+    {
+    "id": "space-communications",
     "status": "published",
     "order": 2,
-    "title": "Antennas, Radiometry, and Measurement",
-    "summary": "I study circularly polarized antennas, phased arrays, and radiometer architectures using measurement workflows spanning prototypes, probe stations, network analysis, and antenna chambers.",
-    "problem": "How can extreme-frequency antenna concepts be validated when direct fabrication and measurement are unusually constrained?",
-    "approach": "My research spans cavity-backed spirals, phased arrays, Fabry-Pérot cavities, and dual-circular-polarization systems. I pair simulation and fabrication-aware design with scalable prototypes, network analysis, probe-station work, frequency extenders, and chamber measurements so that performance can be tested through an appropriate physical route.",
-    "methods": ["Antenna and array design", "Network analysis and frequency extenders", "Probe-station characterization", "Antenna and chamber measurement", "Prototype fabrication"],
-    "applications": ["Atmospheric water-vapor radiometry", "Earth observation", "High-frequency characterization"],
-    "source_refs": ["S1", "S6"],
-    "last_verified": "2026-09-13"
-  },
-  {
-    "id": "space-sensing-future-communications",
-    "status": "published",
-    "order": 3,
-    "title": "Space, Sensing, and Future Communications",
-    "summary": "I apply high-frequency hardware to Earth observation, nanosatellite telemetry, satellite communications, automotive sensing, 6G integrated sensing, and advanced interconnects.",
-    "problem": "Which integrated RF technologies can translate into compact, robust sensing and communication systems?",
-    "approach": "I connect common RF methods across nanosatellite telemetry and telecommand, satellite communications, automotive radar, Earth observation, and integrated sensing and communications for 6G. My projects emphasize compact hardware, polarization, high-frequency links, and measurement strategies while keeping public industry descriptions within approved disclosure limits.",
-    "methods": ["System and antenna architecture", "Active and broadband arrays", "Beamforming concepts", "High-frequency interconnect characterization"],
-    "applications": ["Space and Earth observation", "Automotive sensing", "SATCOM", "6G and ISAC"],
+    "title": "Innovative Space Hardware",
+    "summary": "I design high-frequency hardware for CubeSat telemetry and satellite communications.",
+    "problem": "Which integrated RF technologies can translate into compact, robust communication systems?",
+    "approach": "I connect common RF methods across nanosatellite telemetry and telecommand, and satellite communications. My projects emphasize compact hardware, dual circular polarization, and measurement strategies while keeping public industry descriptions within approved disclosure limits.",
+    "methods": ["System and antenna architecture", "Active and broadband arrays", "Beamforming concepts", "Sequential Rotation"],
+    "applications": ["Space and Earth observation", "CubeSat Telemetry", "SATCOM"],
     "source_refs": ["S1", "S2", "S6"],
     "last_verified": "2026-09-13"
-  }
+  },
+{
+  "id": "antennas-radiometry-measurement",
+  "status": "published",
+  "order": 3,
+  "title": "Measurement System Setup",
+  "summary": "I validate antennas, arrays, radiometers, and high-frequency hardware using probe stations, VNAs, frequency extenders, coplanar probes, antenna chambers, and near-field measurement systems.",
+  "problem": "How can mmWave and sub-THz antenna concepts be reliably validated under demanding fabrication and measurement constraints?",
+  "approach": "I combine simulation and prototype development with calibrated probe-station measurements, VNA frequency extenders, GSG/GSGSG coplanar probes, near-field scanning, and chamber characterization to evaluate impedance, radiation patterns, gain, polarization, and beam steering.",
+  "methods": [
+    "Probe-station characterization",
+    "VNA and frequency extenders",
+    "GSG/GSGSG coplanar probes",
+    "TRL and mTRL calibration",
+    "Near-field antenna measurement",
+    "Antenna chamber characterization",
+    "Prototype fabrication"
+  ],
+  "applications": [
+    "Antenna measurement",
+    "On-chip measurements",
+    "mmWave and sub-THz characterization"
+  ],
+  "source_refs": ["S1", "S6"],
+  "last_verified": "2026-09-13"
+}
 ]

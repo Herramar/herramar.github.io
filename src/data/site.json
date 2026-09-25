@@ -6,5 +6,21 @@
   "language": "en",
   "description": "My research in integrated silicon-germanium front ends, antennas, radiometry, and high-frequency measurement at UC3M.",
   "themeColor": "#a51c3d",
-  "lastVerified": "2026-09-13"
+  "lastVerified": "2026-09-13",
+  "frequencyMarkers": [
+    {"label": "400 MHz", "gigahertz": 0.4, "position": 5, "sample": "Planetary Exploration Array"},
+    {"label": "868 MHz", "gigahertz": 0.868, "position": 20, "side": "above", "sample": "CubeSat Telemetry Array"},
+    {"label": "LoRa", "gigahertz": 0.868, "position": 20, "side": "below", "showLabel": true, "sample": "Student Rocket Telemetry Array"},
+    {"label": "1.5 GHz", "gigahertz": 1.5, "position": 35, "sample": "Student Rocket GNSS Array"},
+    {"label": "4 GHz", "gigahertz": 4, "position": 47, "sample": "Beamforming Comms Array"},
+    {"label": "6 GHz", "gigahertz": 6, "position": 53, "sample": "Scaled 4-armed Spiral Antenna"},
+    {"label": "78 / 130 GHz", "position": 70, "sample": "LNA for Automotive Radar"},
+    {"label": "183 GHz", "gigahertz": 183, "position": 82, "sample": "Water-Vapor Radiometer"},
+    {"label": "260 GHz", "gigahertz": 260, "position": 94, "sample": "Power Detector for 6G Comms"}
+  ],
+  "frequencyBands": [
+    {"label": "Radiofrequency", "start": 0, "end": 30, "captionPosition": 12},
+    {"label": "Microwaves", "start": 30, "end": 60, "captionPosition": 43},
+    {"label": "mmWaves", "start": 60, "end": 100, "captionPosition": 76}
+  ]
 }

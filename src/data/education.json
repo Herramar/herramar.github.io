@@ -1,0 +1,52 @@
+[
+  {
+    "id": "education-phd-signal-processing",
+    "status": "published",
+    "category": "phd",
+    "startDate": "2022-12",
+    "endDate": null,
+    "displayDates": "12/2022 - Present",
+    "degree": "PhD in Signal Processing and Communications Engineering",
+    "institution": "Universidad Carlos III de Madrid (UC3M), Spain",
+    "details": [
+      "Expected 2027",
+      "Thesis: On-Chip SiGe Front Ends in Millimeter-Wave Bands for Automotive, Space and Communication Applications."
+    ],
+    "source_refs": ["CV"],
+    "last_verified": "2026-09-25"
+  },
+  {
+    "id": "education-double-masters",
+    "status": "published",
+    "category": "masters",
+    "startDate": "2020-09",
+    "endDate": "2022-06",
+    "displayDates": "09/2020 - 06/2022",
+    "degree": "Double Master's Degree - Telecommunications & Space Engineering",
+    "institution": "Universidad Carlos III de Madrid (UC3M), Spain",
+    "details": ["Grade: 8.25/10"],
+    "tracks": [
+      {"degree": "MSc in Telecommunications Engineering", "details": ["Thesis (9.5/10): Antenna-array design for a water-vapor radiometer on Earth-observation satellites."]},
+      {"degree": "MSc in Space Engineering", "details": ["Thesis (10/10): Non-deployable dual-circularly-polarized UHF antenna for nanosatellite TT&C."]}
+    ],
+    "source_refs": ["CV"],
+    "last_verified": "2026-09-25"
+  },
+  {
+    "id": "education-bsc-sound-image",
+    "status": "published",
+    "category": "bachelors",
+    "startDate": "2016-09",
+    "endDate": "2020-06",
+    "displayDates": "09/2016 - 06/2020",
+    "degree": "BSc in Sound and Image Engineering",
+    "institution": "Universidad Carlos III de Madrid (UC3M), Spain",
+    "details": [
+      "Grade: 8.75/10",
+      "Ranked 1st in class; Extraordinary End-of-Degree Award.",
+      "Six-month international exchange at The University of Sydney, Australia."
+    ],
+    "source_refs": ["CV"],
+    "last_verified": "2026-09-25"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "experience-uc3m-rf-microwave-researcher",
+    "status": "published",
+    "startDate": "2021-04",
+    "displayDates": "04/2021 - Present",
+    "role": "RF/Microwave Researcher - Hardware & Antennas",
+    "institution": "Universidad Carlos III de Madrid (UC3M), GREMA - Madrid, Spain",
+    "details": [
+      "PhD researcher since 12/2022; RF/microwave hardware and antenna systems for space, TT&C, and Earth observation.",
+      "SiGe BiCMOS on-chip antennas and RF front-ends above 100 GHz, extending beyond 200 GHz.",
+      "RF validation with VNAs, spectrum analyzers, probe stations, frequency extenders, chambers, and planar near-field setups."
+    ]
+  },
+  {
+    "id": "experience-aalto-visiting-researcher",
+    "status": "published",
+    "startDate": "2024-07",
+    "displayDates": "07/2024 - 11/2024",
+    "role": "Visiting Doctoral Researcher",
+    "institution": "Aalto University - Espoo, Finland",
+    "details": [
+      "Conducted a fully funded research stay on millimeter-wave, THz, and optical systems for biomedical and space applications in an international research environment."
+    ]
+  }
+]

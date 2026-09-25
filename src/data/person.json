@@ -10,7 +10,7 @@
   "group": "Radiofrequency, Electromagnetics, Microwaves and Antennas Group",
   "groupShort": "GREMA",
   "researchLine": "Integrated RF front ends and antennas for space, sensing, and future communications.",
-  "heroSummary": "I design silicon-germanium front ends and antennas at millimeter and submillimeter wavelengths, combining electromagnetic simulation, fabrication-aware integration, and laboratory characterization. My work supports radiometry and Earth observation, nanosatellite communications, automotive sensing, SATCOM, and emerging 6G systems.",
+  "heroSummary": "I design SiGe front ends and antennas at millimeter and submillimeter wavelengths, combining electromagnetic simulation, fabrication-aware integration, and laboratory characterization. My work supports radiometry and Earth observation, nanosatellite communications, automotive sensing, SATCOM, and emerging 6G systems.",
   "shortBio": "I am a PhD candidate in Signal Processing and Communications Engineering at Universidad Carlos III de Madrid and a researcher in GREMA. My work focuses on integrated silicon-germanium front ends, antennas, radiometry, and high-frequency measurement for space, Earth observation, automotive sensing, SATCOM, and 6G. I completed a doctoral research stay at Aalto University and teach RF and network-analysis laboratory courses at UC3M. I also contribute to student-led space and telecommunications initiatives through PUNTO, UC3-Base, BOIRA, and STAR UC3M.",
   "longBio": [
     "I am a PhD candidate in Signal Processing and Communications Engineering at Universidad Carlos III de Madrid (UC3M), where I have worked as research personnel in the Radiofrequency, Electromagnetics, Microwaves and Antennas Group (GREMA) since 2021. My doctoral research develops on-chip silicon-germanium front ends at frequencies above 200 GHz and laboratory methods for electromagnetic and electrical characterization.",
@@ -27,7 +27,6 @@
     "alt": "Portrait of Juan María Herrera Martín."
   },
   "profiles": [
-    {"label": "UC3M Research Portal", "url": "https://researchportal.uc3m.es/display/inv48090"},
     {"label": "ORCID", "url": "https://orcid.org/0000-0001-7817-2388"},
     {"label": "Google Scholar", "url": "https://scholar.google.com/citations?user=-wKJ8rQAAAAJ&hl=en"},
     {"label": "LinkedIn", "url": "https://www.linkedin.com/in/jmherr/"}

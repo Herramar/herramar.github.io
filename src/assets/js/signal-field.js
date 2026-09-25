@@ -1,6 +1,6 @@
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const revealTargets = document.querySelectorAll(
-  ".section-heading, .theme-link, .publication, .project, .course, .organization, .timeline > li, .career-list > li, .award-list > li"
+  ".section-heading, .theme-link, .publication, .project, .course, .organization, .timeline > li, .award-list > li"
 );
 document.documentElement.classList.add("reveal-ready");
 

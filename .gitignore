@@ -4,3 +4,4 @@ node_modules/
 *.log
 src/assets/images/originals/*
 !src/assets/images/originals/.gitkeep
+run.sh
