@@ -13,13 +13,17 @@ async function files(dir) {
 }
 
 const allFiles = await files(out);
-const htmlFiles = allFiles.filter((file) => file.endsWith(".html"));
+const verificationFile = "google27ce735307a40d08.html";
+const htmlFiles = allFiles.filter((file) => file.endsWith(".html") && path.basename(file) !== verificationFile);
 const expected = ["index.html", "research/index.html", "publications/index.html", "github/index.html", "engagement/index.html", "404.html"];
 const errors = [];
 const basePath = site.basePath.replace(/\/$/, "");
 
 for (const expectedFile of expected) {
   if (!allFiles.includes(path.join(out, expectedFile))) errors.push(`Missing ${expectedFile}`);
+}
+if ((await readFile(path.join(out, verificationFile), "utf8")) !== (await readFile(path.join(root, verificationFile), "utf8"))) {
+  errors.push(`${verificationFile}: published verification content differs from the source`);
 }
 
 const idsByFile = new Map();

@@ -182,6 +182,7 @@ function notFoundPage() {
 await rm(outDir, {recursive:true, force:true});
 await mkdir(outDir, {recursive:true});
 await cp(path.join(root, "src", "assets"), path.join(outDir, "assets"), {recursive:true});
+await cp(path.join(root, "google27ce735307a40d08.html"), path.join(outDir, "google27ce735307a40d08.html"));
 
 const pages = [
   ["index.html", homePage()], ["research/index.html", researchPage()], ["publications/index.html", publicationsPage()],
