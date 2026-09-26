@@ -194,7 +194,7 @@ for (const [filename, html] of pages) {
 }
 
 const publicRoutes = ["/", "/research/", "/publications/", "/github/", "/engagement/"];
-const sitemap = siteUrl ? `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${publicRoutes.map((route) => `\n  <url><loc>${esc(absolute(route))}</loc><lastmod>2026-09-13</lastmod></url>`).join("")}\n</urlset>\n` : `<?xml version="1.0" encoding="UTF-8"?>\n<!-- Set SITE_URL during production build to generate absolute locations. -->\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>\n`;
+const sitemap = siteUrl ? `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${publicRoutes.map((route) => `\n  <url><loc>${esc(absolute(route))}</loc></url>`).join("")}\n</urlset>\n` : `<?xml version="1.0" encoding="UTF-8"?>\n<!-- Set SITE_URL during production build to generate absolute locations. -->\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>\n`;
 const robots = `User-agent: *\nAllow: /\n${siteUrl ? `Sitemap: ${absolute("/sitemap.xml")}\n` : ""}`;
 await writeFile(path.join(outDir, "sitemap.xml"), sitemap, "utf8");
 await writeFile(path.join(outDir, "robots.txt"), robots, "utf8");
