@@ -27,7 +27,7 @@ function profileLinks(className = "profile-links") {
 }
 
 function header(active) {
-  const nav = [["home", "/", "Home"], ["research", "/research/", "Research"], ["publications", "/publications/", "Publications"], ["engagement", "/engagement/", "Engagement"]];
+  const nav = [["home", "/", "Home"], ["research", "/research/", "Research"], ["publications", "/publications/", "Publications"], ["github", "/github/", "GitHub"], ["engagement", "/engagement/", "Engagement"]];
   return `<a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header" data-site-header>
     <div class="wide-container header-inner">
@@ -44,7 +44,7 @@ function footer() {
   return `<footer class="site-footer">
     <div class="wide-container footer-grid">
       <div><p class="footer-name">${esc(person.name)}</p><p>${esc(person.role)} · ${esc(person.institutionShort)} · ${esc(person.groupShort)}</p><a href="mailto:${esc(person.email)}">${esc(person.email)}</a></div>
-      <nav aria-label="Footer"><ul><li><a href="${url("/research/")}">Research</a></li><li><a href="${url("/publications/")}">Publications</a></li><li><a href="mailto:${esc(person.email)}">Contact</a></li></ul></nav>
+      <nav aria-label="Footer"><ul><li><a href="${url("/research/")}">Research</a></li><li><a href="${url("/publications/")}">Publications</a></li><li><a href="${url("/github/")}">GitHub</a></li><li><a href="mailto:${esc(person.email)}">Contact</a></li></ul></nav>
       <div>${profileLinks("footer-profiles")}<p class="copyright">© 2026 ${esc(person.name)}. Content verified 13 September 2026.</p></div>
     </div>
   </footer>`;
@@ -157,6 +157,16 @@ function publicationsPage() {
   return layout({title:"Publications", description:"My eight peer-reviewed publications, with DOI links and filters by output type and research theme.", active:"publications", route:"/publications/", content});
 }
 
+function githubPage() {
+  const profile = "https://github.com/herramar";
+  const content = `${pageIntro("", "GitHub", "Public repositories and recent commits from my GitHub profile.")}
+  <section class="github-banner"><div class="wide-container"><div><span class="github-banner-label">CODE / RESEARCH / TOOLS</span><p>Explore my public work, from research tools to projects in progress.</p></div><a class="button button-primary" href="${profile}">View GitHub profile ↗</a></div></section>
+  <section class="section github-section" aria-labelledby="github-repos-heading"><div class="wide-container"><div class="section-heading"><div><h2 id="github-repos-heading">Public repositories</h2></div><p>Projects are loaded from GitHub and ordered by recent updates.</p></div><p class="github-status" data-github-repos-status role="status">Loading repositories…</p><div class="github-repo-grid" data-github-repos></div></div></section>
+  <section class="section github-section github-commits-section" aria-labelledby="github-commits-heading"><div class="wide-container"><div class="section-heading"><div><h2 id="github-commits-heading">Recent commits</h2></div><p>Recent commits in public repositories; private work is not shown.</p></div><p class="github-status" data-github-commits-status role="status">Loading commits…</p><ol class="github-commit-list" data-github-commits></ol><p class="github-source-note">GitHub updates this data as public activity becomes available. <a href="${profile}">See all activity on GitHub ↗</a></p></div></section>
+  <script src="${asset("js/github.js")}" defer></script>`;
+  return layout({title:"GitHub", description:"Public GitHub repositories and recent commits by Juan María Herrera Martín.", active:"github", route:"/github/", bodyClass:"github-page", content});
+}
+
 function engagementPage() {
   const orgs = organizations.map((org) => `<article class="organization"><figure class="organization-logo organization-logo-${esc(org.logoShape)}"><img src="${asset(`images/${org.logo}`)}" alt="${esc(org.name)} logo"></figure><div class="organization-meta"><time>${esc(org.displayDates)}</time></div><h3>${esc(org.name)}</h3>${org.fullName ? `<p class="full-name">${esc(org.fullName)}</p>` : ""}<p class="role">${esc(org.role)}</p><p>${esc(org.summary)}</p></article>`).join("");
   const content = `${pageIntro("", "Engagement", "Through technical leadership and hands-on student initiatives, I connect my research practice with wider engineering communities.", {engagement: true})}<section class="section section-paper" aria-label="Organizations"><div class="wide-container"><div class="organization-grid">${orgs}</div></div></section><section class="section membership-band"><div class="wide-container two-column"><div><h2 id="memberships">Professional memberships</h2><p>I am a member of the Institute of Electrical and Electronics Engineers (IEEE), the Official College of Telecommunications Engineers (COIT), and the International Union of Radio Science (URSI España).</p></div><div><h2>Contact</h2><p>For technical-community enquiries, contact me at my institutional email address.</p><a href="mailto:${esc(person.email)}">${esc(person.email)}</a></div></div></section>`;
@@ -175,7 +185,7 @@ await cp(path.join(root, "src", "assets"), path.join(outDir, "assets"), {recursi
 
 const pages = [
   ["index.html", homePage()], ["research/index.html", researchPage()], ["publications/index.html", publicationsPage()],
-  ["engagement/index.html", engagementPage()], ["404.html", notFoundPage()]
+  ["github/index.html", githubPage()], ["engagement/index.html", engagementPage()], ["404.html", notFoundPage()]
 ];
 for (const [filename, html] of pages) {
   const destination = path.join(outDir, filename);
@@ -183,7 +193,7 @@ for (const [filename, html] of pages) {
   await writeFile(destination, html, "utf8");
 }
 
-const publicRoutes = ["/", "/research/", "/publications/", "/engagement/"];
+const publicRoutes = ["/", "/research/", "/publications/", "/github/", "/engagement/"];
 const sitemap = siteUrl ? `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${publicRoutes.map((route) => `\n  <url><loc>${esc(absolute(route))}</loc><lastmod>2026-09-13</lastmod></url>`).join("")}\n</urlset>\n` : `<?xml version="1.0" encoding="UTF-8"?>\n<!-- Set SITE_URL during production build to generate absolute locations. -->\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>\n`;
 const robots = `User-agent: *\nAllow: /\n${siteUrl ? `Sitemap: ${absolute("/sitemap.xml")}\n` : ""}`;
 await writeFile(path.join(outDir, "sitemap.xml"), sitemap, "utf8");

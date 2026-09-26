@@ -14,7 +14,7 @@ async function files(dir) {
 
 const allFiles = await files(out);
 const htmlFiles = allFiles.filter((file) => file.endsWith(".html"));
-const expected = ["index.html", "research/index.html", "publications/index.html", "engagement/index.html", "404.html"];
+const expected = ["index.html", "research/index.html", "publications/index.html", "github/index.html", "engagement/index.html", "404.html"];
 const errors = [];
 const basePath = site.basePath.replace(/\/$/, "");
 
