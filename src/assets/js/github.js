@@ -29,8 +29,7 @@ function readmeSummary(markdown) {
   );
   return line?.replace(/!?\[([^\]]+)\]\([^)]*\)/g, "$1")
     .replace(/[`*_]/g, "")
-    .replace(/\s+/g, " ")
-    .slice(0, 180) || "";
+    .replace(/\s+/g, " ") || "";
 }
 
 async function repoDescription(repo) {
@@ -115,7 +114,7 @@ async function loadGithub() {
   }));
   const commits = results.flatMap((result) => result.status === "fulfilled" ? result.value : [])
     .sort((a, b) => new Date(b.commit.commit?.committer?.date || b.commit.commit?.author?.date || 0) - new Date(a.commit.commit?.committer?.date || a.commit.commit?.author?.date || 0))
-    .slice(0, 8);
+    .slice(0, 3);
   commits.forEach(({commit, repoName}) => addCommit(commit, repoName));
   commitsStatus.textContent = commitsNode.children.length
     ? `${commitsNode.children.length} recent public commits shown`

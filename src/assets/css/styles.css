@@ -382,7 +382,7 @@
   .theme-header { display: contents; }
   .theme-header .theme-number { grid-column: 1; grid-row: 1; padding-top: .6rem; color: var(--signal-dark); }
   .theme-header > div { grid-column: 2; grid-row: 1; min-width: 0; }
-  .theme-header h2 { max-width: none; font-size: clamp(2rem, 4vw, 3.8rem); white-space: nowrap; }
+  .theme-header h2 { max-width: none; font-size: clamp(1.75rem, 3vw, 3rem); white-space: nowrap; }
   .theme-header .lede-small, .theme-body p { max-width: 110ch; }
   .theme-body { grid-column: 2; grid-row: 2; min-width: 0; }
   .theme-visual { grid-column: 3; grid-row: 1 / span 2; display: flex; align-self: stretch; justify-content: flex-end; align-items: center; }
@@ -531,7 +531,7 @@
   .github-repo h3 { margin-top: var(--space-4); font-size: 1.65rem; overflow-wrap: anywhere; }
   .github-repo h3 a { text-decoration: none; }
   .github-repo h3 a:hover { text-decoration: underline; }
-  .github-repo-description { margin-top: var(--space-3); color: var(--muted); }
+  .github-repo-description { margin-top: var(--space-3); color: var(--muted); overflow-wrap: anywhere; }
   .github-repo-meta { margin-top: auto; padding-top: var(--space-5); color: var(--signal-dark); font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: .72rem; }
   .github-commits-section { background: var(--surface); }
   .github-commit-list { list-style: none; border-top: 1px solid var(--rule-strong); }
@@ -570,7 +570,7 @@
   .theme-arrow { grid-column: 4; grid-row: 1; }
   .two-column, .theme-body { grid-template-columns: 1fr; gap: var(--space-5); }
   .theme-section > .wide-container { grid-template-columns: 3rem minmax(0, 1fr) minmax(13rem, 18rem); column-gap: var(--space-4); }
-  .theme-header h2 { font-size: clamp(1.5rem, 2.8vw, 2.5rem); }
+  .theme-header h2 { font-size: clamp(1.4rem, 2.4vw, 2.2rem); }
   .related-work { padding: var(--space-4) 0 0; border-left: 0; border-top: 1px solid var(--rule); }
   .course { grid-template-columns: 1fr 1fr; }
   .course .tag-list { grid-column: 1 / -1; }
@@ -647,7 +647,7 @@
   .theme-body { grid-column: 1; grid-row: 3; }
   .theme-visual { grid-column: 1; grid-row: 4; justify-content: flex-start; }
   .theme-visual img { width: auto; max-width: 100%; }
-  .theme-header h2 { font-size: clamp(1rem, 4.5vw, 2.45rem); }
+  .theme-header h2 { font-size: clamp(1rem, 4vw, 2rem); }
   #communities, #memberships { font-size: 1.75rem; }
   #experience { font-size: 1.75rem; }
   .method-list { columns: 1; }
