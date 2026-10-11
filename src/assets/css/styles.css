@@ -497,6 +497,7 @@
   .site-footer a { color: var(--surface); }
   .site-footer nav ul, .footer-profiles { display: grid; gap: .6rem; }
   .footer-name { color: var(--signal); font-size: 1.4rem; font-weight: 800; }
+  .footer-citation-names { margin-top: var(--space-4); color: #c6c9c1; font-size: .75rem; }
   .copyright { margin-top: var(--space-4); color: #868a81; font-size: .75rem; }
 }
 
