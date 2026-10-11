@@ -53,7 +53,28 @@ function footer() {
 function layout({ title, description, active, content, route = "/", bodyClass = "", jsonLd = false }) {
   const canonical = absolute(route);
   const documentTitle = active === "home" ? `${person.name} | RF & Antenna Researcher at UC3M` : `${title} | ${person.name}`;
-  const ld = jsonLd && siteUrl ? `<script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"Person","name":person.name,"url":absolute("/"),"jobTitle":person.role,"affiliation":{"@type":"CollegeOrUniversity","name":person.institution},"memberOf":{"@type":"Organization","name":person.group},"sameAs":person.profiles.map((p) => p.url),"knowsAbout":["Silicon-germanium RF front ends","Millimeter-wave antennas","Radiometry","High-frequency measurement"]})}</script>` : "";
+  const profile = {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "@id": absolute("/#profile"),
+    "url": absolute("/"),
+    "name": `${person.name} | RF & Antenna Researcher at UC3M`,
+    "mainEntity": {
+      "@type": "Person",
+      "@id": absolute("/#person"),
+      "name": person.name,
+      "alternateName": person.alternateNames,
+      "description": person.profileSummary,
+      "url": absolute("/"),
+      "image": absolute(`/assets/images/${person.portrait.src}`),
+      "jobTitle": person.role,
+      "affiliation": {"@type": "CollegeOrUniversity", "name": person.institution},
+      "memberOf": {"@type": "Organization", "name": person.group},
+      "sameAs": [...person.profiles.map((p) => p.url), "https://github.com/herramar"],
+      "knowsAbout": ["Silicon-germanium RF front ends", "Millimeter-wave antennas", "Radiometry", "High-frequency measurement"]
+    }
+  };
+  const ld = jsonLd && siteUrl ? `<script type="application/ld+json">${JSON.stringify(profile).replace(/</g, "\\u003c")}</script>` : "";
   return `<!doctype html>
 <html lang="en" class="no-js">
 <head>
@@ -61,6 +82,7 @@ function layout({ title, description, active, content, route = "/", bodyClass = 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${esc(documentTitle)}</title>
   <meta name="description" content="${esc(description)}">
+  <meta name="robots" content="${route === "/404.html" ? "noindex" : "index, follow, max-image-preview:large"}">
   <meta name="theme-color" content="${esc(site.themeColor)}">
   <meta property="og:title" content="${esc(documentTitle)}">
   <meta property="og:description" content="${esc(description)}">
@@ -124,7 +146,8 @@ function homePage() {
   const educationList = `<div class="education-categories education-list"><section aria-label="PhD"><ol class="career-list">${educationRecord(phd)}</ol></section><section aria-label="Master's"><div class="masters-grid">${masters.tracks.map(mastersTrack).join("")}</div></section><section aria-label="Bachelor's"><ol class="career-list">${educationRecord(bachelors)}</ol></section></div>`;
   const experienceList = `<ol class="career-list experience-list">${experience.map((entry) => `<li><time datetime="${esc(entry.startDate)}">${esc(entry.displayDates)}</time><div><h4>${esc(entry.role)}</h4><p>${esc(entry.institution)}</p>${entry.details.map((detail) => `<p>${esc(detail)}</p>`).join("")}</div></li>`).join("")}</ol>`;
   const awardList = awards.map((award) => `<li><time datetime="${esc(award.date)}">${award.year}</time><div><h3>${esc(award.title)}</h3><p>${esc(award.body)} · ${esc(award.distinction)}</p></div></li>`).join("");
-  const content = `<section class="hero"><div class="hero-grid" aria-hidden="true"></div><div class="wide-container hero-inner"><div class="hero-copy-block">${eyebrow("PhD Candidate · UC3M · GREMA")}<p class="hero-index">RF / ANTENNAS / 2026</p><h1><span>Juan María</span><span>Herrera Martín</span></h1><p class="research-line">${esc(person.researchLine)}</p><p class="hero-copy">${esc(person.heroSummary)}</p><div class="button-row"><a class="button button-primary" href="${url("/research/")}">Explore research <span aria-hidden="true">↗</span></a><a class="button" href="${url("/publications/")}">Publications</a><a class="text-link" href="mailto:${esc(person.email)}">Contact</a></div></div>${heroAside}<div class="frequency-axis" role="group" aria-label="Frequency range from 300 MHz to 300 GHz"><strong>300 MHz</strong><div class="frequency-track">${frequencyBandList}<i aria-hidden="true"></i><ol class="frequency-markers">${frequencyMarkerList}</ol></div><strong>300 GHz</strong></div></div></section>
+  const content = `<section class="hero"><div class="hero-grid" aria-hidden="true"></div><div class="wide-container hero-inner"><div class="hero-copy-block">${eyebrow("PhD Candidate · UC3M · GREMA")}<p class="hero-index">RF / ANTENNAS / 2026</p><h1><span>Juan María</span> <span>Herrera Martín</span></h1><p class="research-line">${esc(person.researchLine)}</p><p class="hero-copy">${esc(person.heroSummary)}</p><div class="button-row"><a class="button button-primary" href="${url("/research/")}">Explore research <span aria-hidden="true">↗</span></a><a class="button" href="${url("/publications/")}">Publications</a><a class="text-link" href="mailto:${esc(person.email)}">Contact</a></div></div>${heroAside}<div class="frequency-axis" role="group" aria-label="Frequency range from 300 MHz to 300 GHz"><strong>300 MHz</strong><div class="frequency-track">${frequencyBandList}<i aria-hidden="true"></i><ol class="frequency-markers">${frequencyMarkerList}</ol></div><strong>300 GHz</strong></div></div></section>
+  <section class="section section-paper" aria-labelledby="about"><div class="reading-container"><div class="section-heading"><div><h2 id="about">About Juan María Herrera Martín</h2></div></div><p>${esc(person.profileSummary)}</p><p>Also published as ${person.citationNames.map(esc).join(", ")}. Full name without accents: ${esc(person.alternateNames[0])}.</p>${profileLinks()}</div></section>
   <section class="section section-paper experience-section" aria-labelledby="experience"><div class="wide-container"><div class="section-heading"><div><h2 id="experience">Professional experience</h2></div></div>${experienceList}</div></section>
   <section class="section section-paper education-section" aria-labelledby="education"><div class="wide-container"><div class="section-heading"><div><h2 id="education">Education</h2></div></div>${educationList}</div></section>
   <section class="section honors-section" aria-labelledby="honors"><div class="wide-container"><div class="section-heading"><div><h2 id="honors">Honors</h2></div></div><ol class="award-list">${awardList}</ol></div></section>`;
